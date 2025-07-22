@@ -1,23 +1,23 @@
-# Use official Python image with a safe version
+# ✅ Use a clean environment with Rust preinstalled
 FROM python:3.11-slim
 
-# Set working directory
-WORKDIR /app
-
-# Install system dependencies
+# 🔧 Install build tools and Rust
 RUN apt-get update && apt-get install -y \
-    gcc \
     build-essential \
+    gcc \
     rustc \
     cargo \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean
 
-# Copy your files
+# 🧠 Set work directory
+WORKDIR /app
+
+# 🗃 Copy files into the container
 COPY . .
 
-# Install Python deps
+# 💾 Install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Run bot
+# ▶️ Start your bot
 CMD ["python", "main.py"]
