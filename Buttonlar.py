@@ -1,10 +1,10 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-main_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton("🥋 Ro'yxatdan o'tish")],
-        [KeyboardButton("📋 Ro'yxatdan o'tganlar")],
-        [KeyboardButton("📈 Yutuqlarni kuzatish")],
-    ],
-    resize_keyboard=True
-)
+def main_menu():
+    builder = InlineKeyboardBuilder()
+    builder.button(text="👥 Register Athlete", callback_data="register")
+    builder.button(text="📋 List Athletes", callback_data="list")
+    builder.button(text="📈 Progress", callback_data="progress")
+    builder.button(text="📢 Broadcast", callback_data="broadcast")
+    builder.adjust(2)
+    return builder.as_markup()
