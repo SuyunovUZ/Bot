@@ -1,42 +1,33 @@
+from aiogram import Bot, Dispatcher, types
+from aiogram.enums import ParseMode
+from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.types import Message
+from aiogram.utils.keyboard import InlineKeyboardMarkup, InlineKeyboardButton
+from buttons import main_menu
+from config import TOKEN, ADMIN_ID
+import asyncio
 import logging
-from aiogram import types
-from config import dp, bot, ADMIN_ID
-from Buttonlar import main_menu
 
+bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)
+dp = Dispatcher(storage=MemoryStorage())
 logging.basicConfig(level=logging.INFO)
 
-@dp.message_handler(commands=['start'])
-async def send_welcome(message: types.Message):
-    try:
-        await bot.send_message(
-            ADMIN_ID,
-            f"👤 Foydalanuvchi botni ishga tushirdi:\n"
-            f"ID: {message.from_user.id}\n"
-            f"Username: @{message.from_user.username}\n"
-            f"Full Name: {message.from_user.full_name}"
-        )
-    except Exception as e:
-        print(f"[ERROR] Admin message failed: {e}")
+# Start command
+@dp.message(commands=["start"])
+async def start_handler(message: Message):
+    if message.from_user.id == ADMIN_ID:
+        await message.answer("<b>Welcome, Coach!</b> 👊", reply_markup=main_menu())
+    else:
+        await message.answer("<b>Welcome to Khayriddinov Kickboxing Club 🥊</b>", reply_markup=main_menu())
 
-    await message.answer(
-        f"Assalomu alaykum, {message.from_user.first_name}!\n"
-        "🏆 Kickboxing bo'yicha ro'yxatdan o'tish botiga xush kelibsiz!",
-        reply_markup=main_menu
-    )
+# Default
+@dp.message()
+async def fallback(message: Message):
+    await message.answer("Please use the menu buttons.")
 
-@dp.message_handler(lambda msg: msg.text == "🥋 Ro'yxatdan o'tish")
-async def register_user(message: types.Message):
-    await message.answer("📝 Ismingizni yozing... (Demo versiya, ishlanmoqda)")
-
-@dp.message_handler(lambda msg: msg.text == "📋 Ro'yxatdan o'tganlar")
-async def list_users(message: types.Message):
-    await message.answer("📄 Ro'yxatdan o'tganlar ro'yxati (Demo versiya).")
-
-@dp.message_handler(lambda msg: msg.text == "📈 Yutuqlarni kuzatish")
-async def track_progress(message: types.Message):
-    await message.answer("📊 Yutuqlarni kuzatish (Demo versiya).")
-import asyncio
-
-if __name__ == "__main__":
+async def main():
     print("Bot is starting...")
+    await dp.start_polling(bot)
+
+if __name__ == '__main__':
     asyncio.run(main())
