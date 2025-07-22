@@ -1,17 +1,13 @@
 # render.yaml
-build:
-  pythonVersion: 3.10.13
-
-
-
 services:
   - type: web
-    name: quizbot
+    name: khayriddinov-bot
     runtime: python
     buildCommand: ""
-    startCommand: python py/main.py
-    pythonVersion: 3.10.13
-    region: oregon
-    branch: main
-    repo: https://github.com/SuyunovUZ/Bot
-    plan: free
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+    autoDeploy: true
