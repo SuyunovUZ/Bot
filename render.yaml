@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: khayriddinov-bot
+    name: kickboxing-bot
     env: docker
     plan: free
-    branch: main
-    region: frankfurt
     autoDeploy: true
