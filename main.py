@@ -35,8 +35,8 @@ async def list_users(message: types.Message):
 @dp.message_handler(lambda msg: msg.text == "📈 Yutuqlarni kuzatish")
 async def track_progress(message: types.Message):
     await message.answer("📊 Yutuqlarni kuzatish (Demo versiya).")
+import asyncio
 
-if __name__ == '__main__':
-    from aiogram import executor
+if __name__ == "__main__":
     print("Bot is starting...")
-    executor.start_polling(dp, skip_updates=True)
+    asyncio.run(main())
