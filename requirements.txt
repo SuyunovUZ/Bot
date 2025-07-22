@@ -1,0 +1,238 @@
+aiogram==2.25.1
+aiohttp==3.9.3
+aiosignal==1.3.1
+async-timeout==4.0.3
+attrs==23.1.0
+Babel==2.9.1
+certifi==2023.7.22
+charset-normalizer==3.3.0
+frozenlist==1.4.0
+idna==3.4
+multidict==6.0.4
+pytz==2023.3.post1
+yarl==1.9.2
+
+# 1)6-B
+#2)9-A
+#3)16-D
+#4)20-D
+#5)24-D
+#6)25-A
+#7)30-B
+#8)33-A
+#9)40-D
+#10)44-D
+#11)45-A
+#12)50-B
+#13)55-C
+#14)60-D
+#5)63-C
+#16)65-A
+#17)70-B
+#18)74-B
+#19)80-D
+#20)84-D
+
+#         # ----------------------------------------------------------------------------------------------------------------------
+#         # ------------CORRECT---------------------------------------------------------------------------------------------------
+#         # ----------------------------------------------------------------------------------------------------------------------
+#         if call.data == '6':
+#             correct.append(1)
+#         elif call.data == '9':
+#             correct.append(2)
+#         elif call.data == '16':
+#             correct.append(3)
+#         elif call.data == '20':
+#             correct.append(4)
+#         elif call.data == '24':
+#             correct.append(5)
+#         elif call.data == '25':
+#             correct.append(6)
+#         elif call.data == '30':
+#             correct.append(7)
+#         elif call.data == '33':
+#             correct.append(8)
+#         elif call.data == '40':
+#             correct.append(9)
+#         elif call.data == '44':
+#             correct.append(10)
+#         elif call.data == '45':
+#             correct.append(11)
+#         elif call.data == '50':
+#             correct.append(12)
+#         elif call.data == '55':
+#             correct.append(13)
+#         elif call.data == '60':
+#             correct.append(14)
+#         elif call.data == '63':
+#             correct.append(15)
+#         elif call.data == '65':
+#             correct.append(16)
+#         elif call.data == '70':
+#             correct.append(17)
+#         elif call.data == '74':
+#             correct.append(18)
+#         elif call.data == '80':
+#             correct.append(19)
+#         elif call.data == '84':
+#             correct.append(20)
+# ----------------------------------------------------------------------------------------------------------------------
+# -------------MISTAKE--------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
+
+    # global nat, mistake
+    # nat = 0
+    # mistake = 0
+    # if message.text == '6':
+    #     nat += 1
+    # else:
+    #     mistake += 1
+    # if message.text == '9':
+    #     nat += 1
+    # else:
+    #     mistake += 1
+    # if message.text == '16':
+    #     nat += 1
+    #     print(nat)
+    # else:
+    #     mistake += 1
+    #     print(mistake)
+
+
+
+# @dp.callback_query_handler(text='6')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     print(nat)
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='9')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     print(nat)
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='16')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     print(nat)
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='20')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='24')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='25')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='30')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='33')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='40')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='44')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='45')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='50')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='55')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='60')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='63')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='65')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='70')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='74')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
+# @dp.callback_query_handler(text='80')
+# async def programming(call: CallbackQuery):
+#     global nat
+#     nat += 1
+#     await call.answer(cache_time=10)
+#
+#
