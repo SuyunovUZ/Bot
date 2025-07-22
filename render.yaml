@@ -2,12 +2,10 @@
 services:
   - type: web
     name: khayriddinov-bot
-    runtime: python
-    buildCommand: ""
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
     startCommand: python main.py
     envVars:
-      - key: BOT_TOKEN
-        sync: false
-      - key: ADMIN_ID
-        sync: false
-    autoDeploy: true
+      - key: PYTHON_VERSION
+        value: 3.11
