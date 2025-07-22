@@ -1,9 +1,6 @@
 services:
   - type: web
     name: khayriddinov-bot
-    env: python
+    env: docker
     region: frankfurt
     plan: free
-    buildCommand: pip install --upgrade pip && pip install --only-binary=:all: -r requirements.txt
-    startCommand: python main.py
-
