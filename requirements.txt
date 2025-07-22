@@ -4,9 +4,6 @@ python-dotenv
 frozenlist==1.4.0
 yarl==1.9.2
 pydantic==2.5.3
-pydantic-core==2.14.6
-
-
 
 
 # 1)6-B
