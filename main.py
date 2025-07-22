@@ -3,7 +3,7 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import Message
 from aiogram.utils.keyboard import InlineKeyboardMarkup, InlineKeyboardButton
-from buttons import main_menu
+from Buttonlar import main_menu
 from config import TOKEN, ADMIN_ID
 import asyncio
 import logging
