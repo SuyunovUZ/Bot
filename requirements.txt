@@ -2,8 +2,12 @@ aiogram==3.1.1
 python-dotenv==1.0.1
 frozenlist==1.4.0
 yarl==1.9.2
-pydantic==1.10.13
+pydantic==2.3.0
 typing-extensions==4.7.1
+aiohttp==3.9.3
+aiofiles==23.2.1
+certifi==2023.7.22
+magic-filter==1.0.12
 
 #2)9-A
 #3)16-D
