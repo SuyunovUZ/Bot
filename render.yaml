@@ -9,3 +9,6 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
+
+build:
+  command: pip install --only-binary=:all: -r requirements.txt
