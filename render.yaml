@@ -2,5 +2,7 @@ services:
   - type: web
     name: khayriddinov-bot
     env: docker
-    region: frankfurt
     plan: free
+    branch: main
+    region: frankfurt
+    autoDeploy: true
