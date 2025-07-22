@@ -3,7 +3,7 @@ aiohttp==3.9.3
 frozenlist==1.4.0
 yarl==1.9.2
 python-dotenv==1.0.1
-pydantic==2.5.3
+pydantic==2.3.0
 typing-extensions==4.7.1
 
 # 1)6-B
