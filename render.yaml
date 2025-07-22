@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quizbot
+    runtime: python
+    buildCommand: ""
+    startCommand: python py/main.py
+    pythonVersion: 3.10.13
+    region: oregon
+    branch: main
+    repo: https://github.com/SuyunovUZ/Bot
+    plan: free
